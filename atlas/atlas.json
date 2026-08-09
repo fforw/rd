@@ -1,0 +1,11 @@
+{
+    "_" : "This file only contains the configuration for the auto-generated atlas",
+    "frames": {
+        "large-tree.png": {
+            "pivot": {
+                "x": 56,
+                "y": 106
+            }
+        }
+    }
+}

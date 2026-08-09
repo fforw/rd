@@ -1,0 +1,17 @@
+{
+    "presets": [
+        "@babel/preset-react",
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        ["@babel/plugin-transform-class-properties", { "loose": true }],
+        "@babel/plugin-syntax-dynamic-import"
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "babel-plugin-espower"
+            ]
+        }
+    }
+}
