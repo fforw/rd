@@ -86,6 +86,7 @@ function generateAtlas(atlasPath, index, variant)
     //     );
     
     const promises = [];
+    const padding = 1
 
     fs.readdirSync(curr).forEach(file => {
 
@@ -96,10 +97,11 @@ function generateAtlas(atlasPath, index, variant)
 
                     //console.log("READ IMAGE", file, img.getWidth() + "x" + img.getHeight())
 
+                    const border = padding * 2
                     return ({
                         id: file,
-                        width: img.getWidth(),
-                        height: img.getHeight(),
+                        width: img.getWidth() + border,
+                        height: img.getHeight() + border,
                         img
                     });
                 })
@@ -138,7 +140,7 @@ function generateAtlas(atlasPath, index, variant)
 
                 images.forEach(function (bin) {
 
-                    const {x, y, width: w, height: h, img} = bin;
+                    let {x, y, width: w, height: h, img} = bin;
 
                     atlas.frames[bin.id] = {
 
@@ -172,7 +174,7 @@ function generateAtlas(atlasPath, index, variant)
 
                     };
 
-                    atlasImg.blit(img, x, y)
+                    atlasImg.blit(img, x + padding, y + padding);
                 });
                 const imageName = "atlas-" + index + ".png";
 
