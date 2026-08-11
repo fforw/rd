@@ -7,7 +7,7 @@ const pack = require('bin-pack');
 
 const ATLASES = [
     {
-        path: "../atlas",
+        path: "../atlas-src",
         variant : 1
     }
 
